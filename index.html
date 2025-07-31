@@ -176,20 +176,31 @@ It offers a glimpse into my approach to social media and public communications, 
         <img src="Template.jpg" alt="Template graphic example">
         <img src="Inclusive School .jpg" alt="Inclusive School post">
       </div>
+      <div style="text-align: center; margin-top: 1rem;">
+  <button onclick="showPrevImage()">Previous</button>
+  <button onclick="showNextImage()">Next</button>
+</div>
     </section>
 
  <script>
-    const images = document.querySelectorAll('.fade-carousel img');
-    let current = 0;
+  const images = document.querySelectorAll('.fade-carousel img');
+  let current = 0;
+  let interval = setInterval(showNextImage, 3000); // Auto-cycle every 3 sec
 
-    function showNextImage() {
-      images[current].classList.remove('active');
-      current = (current + 1) % images.length;
-      images[current].classList.add('active');
-    }
+  function showImage(index) {
+    images[current].classList.remove('active');
+    current = (index + images.length) % images.length; // wraparound logic
+    images[current].classList.add('active');
+  }
 
-    setInterval(showNextImage, 6000);
-  </script>
+  function showNextImage() {
+    showImage(current + 1);
+  }
+
+  function showPrevImage() {
+    showImage(current - 1);
+  }
+</script>
 
 </style>
 
