@@ -152,10 +152,32 @@ It offers a glimpse into my approach to social media and public communications, 
 </section>
 
     <a class="anchor" id="graphics"></a>
-    <section>
-      <h2>Graphics</h2>
-      <p>[Include 5 to 7 examples of graphics or carousels used in social campaigns, ideally with brief annotations]</p>
-    </section>
+<section id="graphics">
+  <h2>Graphics</h2>
+  <div class="carousel">
+    <img src="images/Clean Up Australia Day - Danielle Green MP (Final Check liv).png" alt="Clean Up Australia Day post">
+    <img src="images/$750,000 for Beveridge Reserve Upgrade.jpg" alt="Beveridge Reserve Upgrade post">
+    <img src="images/Template.jpg" alt="Template graphic example">
+    <img src="images/Inclusive School .jpg" alt="Inclusive School post">
+  </div>
+</section>
+
+<style>
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 1rem;
+  }
+  .carousel img {
+    height: 300px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    border-radius: 8px;
+  }
+</style>
 
     <a class="anchor" id="campaigns"></a>
     <section>
