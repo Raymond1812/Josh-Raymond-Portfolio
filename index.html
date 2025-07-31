@@ -95,6 +95,25 @@
       top: -80px;
       visibility: hidden;
     }
+
+    .carousel-controls {
+  text-align: center;
+  margin-top: 1rem;
+}
+.carousel-controls button {
+  background-color: #a80000;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  margin: 0 0.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.carousel-controls button:hover {
+  background-color: #870000;
+}
   </style>
 </head>
 <body>
@@ -179,13 +198,17 @@ It offers a glimpse into my approach to social media and public communications, 
       <div style="text-align: center; margin-top: 1rem;">
   <button onclick="showPrevImage()">Previous</button>
   <button onclick="showNextImage()">Next</button>
+        <div class="carousel-controls">
+  <button onclick="showPrevImage()">Previous</button>
+  <button onclick="showNextImage()">Next</button>
+</div>
 </div>
     </section>
 
  <script>
   const images = document.querySelectorAll('.fade-carousel img');
   let current = 0;
-  let interval = setInterval(showNextImage, 3000); // Auto-cycle every 3 sec
+  let interval = setInterval(showNextImage, 10000); // Auto-cycle every 3 sec
 
   function showImage(index) {
     images[current].classList.remove('active');
